@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 투자 알림</title>
+    
+    <!-- PWA 설정 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📈 AI 투자 알림</h1>
+            <button id="install-btn" class="install-btn" style="display: none;">
+                앱으로 설치하기
+            </button>
+        </header>
+
+        <main>
+            <!-- 오늘의 추천 종목 -->
+            <section class="recommendation-section">
+                <h2>🎯 오늘의 AI 추천 종목</h2>
+                <div class="time-info">
+                    매일 오전 8시 55분 업데이트
+                </div>
+                <div id="recommendations" class="stock-list">
+                    <div class="loading">추천 종목을 불러오는 중...</div>
+                </div>
+            </section>
+
+            <!-- 어제 거래대금 TOP 3 -->
+            <section class="volume-section">
+                <h2>💰 어제 거래대금 TOP 3</h2>
+                <div class="time-info">
+                    매일 장마감 후 업데이트
+                </div>
+                <div id="top-volume" class="stock-list">
+                    <div class="loading">데이터를 불러오는 중...</div>
+                </div>
+            </section>
+
+            <!-- 알림 설정 -->
+            <section class="notification-section">
+                <h2>🔔 알림 설정</h2>
+                <div class="notification-controls">
+                    <label class="switch">
+                        <input type="checkbox" id="morning-alarm">
+                        <span class="slider"></span>
+                        오전 8시 55분 추천종목 알림
+                    </label>
+                    
+                    <label class="switch">
+                        <input type="checkbox" id="evening-alarm">
+                        <span class="slider"></span>
+                        장마감 후 거래대금 TOP3 알림
+                    </label>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
